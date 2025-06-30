@@ -6,5 +6,5 @@ export default {
   border: '#E0E0E0',
   notification: '#FF3B30',
   inputBg: '#f9f9f9',
-  pText: '#0000006b',
+  pText: '#666666',
 };

@@ -12,11 +12,14 @@ const Setting = () => {
         <Switch
           value={theme === "dark"}
           onValueChange={toggleTheme}
+          thumbColor={theme === "dark" ? "#3674B5" : "#f4f3f4"}
+          trackColor={{ false: "#767577", true: "#81b0ff" }}
         />
       </View>
     </View>
   );
 };
+
 
 const styles = StyleSheet.create({
   container: {

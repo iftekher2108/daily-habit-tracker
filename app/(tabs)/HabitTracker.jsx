@@ -99,9 +99,9 @@ const { themeObject } = useTheme();
   // Progress calculation
   const progress = habits.length ? habits.filter(h => h.completed).length / habits.length : 0;
 
-  if (loading) return (
-    <View style={styles.container}><Text>Loading...</Text></View>
-  );
+  // if (loading) return (
+  //   <View style={styles.container}><Text>Loading...</Text></View>
+  // );
 
   return (
     <View style={[styles.container, { backgroundColor: themeObject.background }]}>

@@ -1,20 +1,22 @@
 import { Stack } from "expo-router";
 import { ThemeProvider } from "../src/config/ThemeContext";
 
-const isLogin = true;
+
+const isLogin = false;
 
 export default function RootLayout() {
-  return(
+  return (
     <ThemeProvider>
       <Stack>
-        {/* protect screen */}
-        <Stack.Protected guard={isLogin}>
-            <Stack.Screen name="(tabs)" options={{ headerShown:false, title:"this is counter app" }} />
-        </Stack.Protected>
-        {/* none protect screen */}
-        <Stack.Protected guard={!isLogin}>
+        {/* Unprotected screen: show login if not logged in */}
+        {/* <Stack.Protected guard={!isLogin}> */}
           <Stack.Screen name="login" options={{ title: "Login" }} />
-        </Stack.Protected>
+        {/* </Stack.Protected> */}
+        {/* Protected screen: show tabs if logged in */}
+        {/* <Stack.Protected guard={isLogin}> */}
+          <Stack.Screen name="(tabs)" options={{ headerShown: false, title: "this is counter app" }} />
+        {/* </Stack.Protected> */}
+        {/* <Stack.Screen name="+not-found" options={{ headerShown: false, title: "page not found" }} /> */}
       </Stack>
     </ThemeProvider>
   );
